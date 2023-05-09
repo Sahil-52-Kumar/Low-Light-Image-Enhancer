@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Enhancer</title>
+
+    <style>
+
+        body{
+
+            display: flex;
+            flex-direction: row;
+
+            background-color: rgba(255, 255, 255, 0.851);
+
+            justify-content: center;
+
+            
+        }
+
+        .photo{
+
+            display: flex;
+            flex-direction: column-reverse;
+
+            border-radius: 39px;
+            background-color: rgba(255, 255, 255, 0.88);
+            box-shadow: 5px 10px 18px #888888;
+            margin-top : 5px;
+            padding-top: 50px ;
+            padding-bottom: 25px;
+            width:1095px;
+            height: 653px;
+
+            text-align: center;
+            
+            box-sizing: border-box;
+            ;
+
+        }
+        .left{
+            margin-left: 9px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .options{
+            background-color: rgba(255, 255, 255, 0.88);
+            margin-left: 29px;
+
+            display: flex;
+            flex-direction: column;
+            
+            width: 300px;
+            height: 720px;     
+            margin-right: 0px;
+
+           
+            justify-content: center;
+            text-align: center;
+
+           }
+
+           label{
+            color: rgb(126, 225, 255);
+            height: 5px;
+            width: auto;
+           }
+
+
+           .upload{
+
+                height:65px;
+                width:auto;
+                
+                
+           }
+           .btn{
+            color: rgb(221, 233, 244);
+            margin-bottom: 29px;
+            border-radius: 18px;
+            font-size: 20px;
+            border: solid rgb(255, 255, 255);
+            padding: 9px;
+           }
+       
+
+           
+
+          
+     
+
+  
+
+    </style>
+
+
+</head>
+<body>
+    
+
+        <div class = "left">
+
+
+            <div class ="photo">     
+
+                    <form action = "http://localhost:5000/" method = "POST" enctype = "multipart/form-data">             <!--1 get image buttun-->
+
+                        <input type = "file" name = "file" id = "img" onchange="this.form.submit()" style="display:none;"/>
+                        <label for="img"  > <img src="./static/Image/upload.jpg" class = "upload"></label>
+                    </form>   
+
+                    <p class = "image">                                                                                     <!--3 displaying-->
+                        <img src="{{ user_image }}" id = "h" style = " 
+                                                                
+                                                                height: 500px;
+                                                                width: auto;
+                                                                margin-top: 20px;
+                                                                margin-bottom:0px;
+                                                        
+                                                            " >
+                    </p>
+
+            </div>
+
+            
+        </div>
+
+        
+
+
+        <div class = "options">  <!--dark gray-->
+
+            <a href="/home" class = "opt">
+                <button type="button" class = "btn" style="background-color:rgb(255, 0, 89);">Clear</button>
+                
+            </a>
+
+
+            <a href="/compare" class = "opt">
+                <button type="button" class = "btn" style="background-color:rgb(255, 0, 89);">Compare</button>
+                
+            </a>
+
+
+
+            <a href="/enhanced" class = "opt">
+                <button type="button" class = "btn"  style="background-color:rgb(255, 0, 89);">Low Light Image Enhancement</button>
+                
+            </a>
+
+
+        </div>
+
+    
+
+</body>
+
+
+</html>
+
+
